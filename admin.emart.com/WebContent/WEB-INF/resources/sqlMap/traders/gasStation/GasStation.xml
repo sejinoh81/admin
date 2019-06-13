@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="gasStation">
+    
+    <select id="gasStationList" resultType="admin.emart.com.traders.gasStation.vo.GasStationVO">
+        <![CDATA[   
+            SELECT SEQ,
+                   CODE, 
+                   NAME,
+                   AREACODE,
+                   ZIPCODE1,
+                   ZIPCODE2,
+                   ADDRESS1,
+                   ADDRESS2,
+                   TEL1,
+                   TEL2,
+                   TEL3,
+                   SHOPPING_TIME,
+                   OPEN_DATE,
+                   SPEC,
+                   PARKING,
+                   DETAIL,
+                   IMAGE,
+                   MAP_IMG,
+                   INTRODUCE,
+                   DISPLAY_YN,
+                   REGIST_ADMIN_ID,
+                   REGIST_DT,
+                   MODIFY_ADMIN_ID,
+                   MODIFY_DT,
+                   TRAFFIC_INFO 
+              FROM TRADERS_STORE
+             WHERE DELETE_YN = 'N'
+               AND OIL_YN = 'Y'
+        ]]>
+    </select>
+
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="popup">
+    
+    <select id="popupList" resultType="admin.emart.com.traders.popup.vo.PopupVO">
+        <![CDATA[   
+        SELECT
+               SEQ, 
+               DISPLAY_START_DT, 
+               DISPLAY_END_DT, 
+               DISPLAY_YN, 
+               TITLE, 
+               CONTENT, 
+               WIDTH, 
+               HEIGHT, 
+               TOP_PIXEL, 
+               LEFT_PIXEL, 
+               TOP_CENTER_YN, 
+               LEFT_CENTER_YN, 
+               SCROLLBARS, 
+               CHECK_ONEDAY, 
+               DELETE_YN, 
+               REGIST_ADMIN_ID, 
+               REGIST_DT, 
+               MODIFY_ADMIN_ID, 
+               MODIFY_DT
+        FROM 
+               TRADERS_POPUP
+        ORDER  BY DISPLAY_YN DESC, REGIST_DT DESC       
+        ]]>
+    </select>
+
+</mapper>

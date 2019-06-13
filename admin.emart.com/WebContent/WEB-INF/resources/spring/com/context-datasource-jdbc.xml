@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/context/spring-jdbc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">						
+	
+	<!-- DB 연결 설정 -->
+    <!-- Oracle : store.emart.com -->
+    <!-- 
+    <bean id="emart.dataSource-oracle"         	class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" 		value="#{config['Globals.Oracle.DriverClassName']}"/>
+        <property name="url"             		value="#{config['Globals.Url.Emart']}" />
+        <property name="username"        		value="#{config['Globals.UserName.Emart']}"/>
+        <property name="password"        		value="#{config['Globals.Password.Emart']}"/>
+    </bean>
+     -->
+    <bean id="dataSource"         	            class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" 		value="oracle.jdbc.driver.OracleDriver"/>
+        <property name="url"             		value="jdbc:oracle:thin:@174.100.29.31:1521:BOONS" />
+        <property name="username"        		value="wsemart"/>
+        <property name="password"        		value="newshin"/>
+    </bean>
+    
+	<!-- Query Log를 위한 설정 -->
+	<!-- 
+	<bean id="log.emart.dataSource-oracle" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+        <constructor-arg ref="emart.dataSource-oracle" />
+        <property name="logFormatter">
+            <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+                <property name="loggingType" value="MULTI_LINE" />
+                <property name="sqlPrefix" value="[SQL] >  " />
+            </bean>
+        </property>
+    </bean>
+	 -->
+
+</beans>

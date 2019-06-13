@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+ 	<!-- =========================================================================== -->
+    <!-- DEFINITION :: 메인 페이지 레이아웃 -->
+    <!-- =========================================================================== -->
+    <!-- <definition name="layouts-tiles"    template="/WEB-INF/jsp/include/layoutPage.jsp">  
+        <put-attribute name="header"    value="/WEB-INF/jsp/include/mainHeader.jsp" />
+        <put-attribute name="left"      value="/WEB-INF/jsp/include/mainLeft.jsp" />
+        <put-attribute name="content"   value="" />
+        <put-attribute name="footer"    value="/WEB-INF/jsp/include/mainFooter.jsp" />
+    </definition> -->
+    <definition name="layouts-tiles"    template="/WEB-INF/jsp/tiles/tiles-layouts.jsp">  
+        <put-attribute name="header"    value="/WEB-INF/jsp/tiles/tiles-header.jsp" />
+        <put-attribute name="nav"       value="/WEB-INF/jsp/tiles/tiles-nav.jsp" />
+        <put-attribute name="left"      value="/WEB-INF/jsp/tiles/tiles-left.jsp" />
+        <put-attribute name="content"   value="" />
+        <put-attribute name="footer"    value="/WEB-INF/jsp/tiles/tiles-footer.jsp" />
+    </definition>
+    
+    <!-- =========================================================================== -->
+    <!-- DEFINITION :: common 레이아웃 -->
+    <!-- =========================================================================== -->
+    <!-- <definition name="/*/*" extends="layouts-tiles">
+        <put-attribute name="content"   value="/WEB-INF/jsp/{1}/{2}.jsp" />
+    </definition> -->
+    
+    
+    <!-- =========================================================================== -->
+    <!-- DEFINITION :: 레이아웃 -->
+    <!-- =========================================================================== -->
+    <definition name="/*/*/*" extends="layouts-tiles">
+        <put-attribute name="content"   value="/WEB-INF/jsp/{1}/{2}/{3}.jsp" />
+    </definition>
+    
+</tiles-definitions>
